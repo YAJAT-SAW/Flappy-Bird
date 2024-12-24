@@ -1,0 +1,43 @@
+main {
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.root{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.background{
+  border: 2px solid black;
+  height: 600px;
+  width: 350px;
+  background-image: url(background-day.png);  
+}
+.bird{
+  height: 35px;
+  width: 40px;
+  background-image: url(yellowbird-upflap.png);
+  background-size: 100% 100%;
+  transform: translate(100px, 287px);
+  animation: gravity 3s infinite ease-out;
+  border: 2px solid black;
+  transform-origin: center;
+}
+.score{
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'poppins', sans-serif;
+  color: white;
+  text-align: center;
+}
+@keyframes gravity{
+  0%{
+    transform : rotate(0deg);
+  }
+  100%{
+    transform : rotate(90deg);
+  }
+}
