@@ -30,7 +30,7 @@ export default function App() {
       pipeInterval = setInterval(()=>{
         setPipeX(pipeX+SPEED);
         console.log(pipeX);
-      })
+      }, 100)
     }
     return clearInterval(pipeInterval);
   },[])
