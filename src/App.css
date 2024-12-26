@@ -16,14 +16,19 @@ body{
   width: 350px;
   background-image: url(background-day.png);
   position: relative;
+  overflow: hidden;
 }
 .bird{
+  position: absolute;
   height: 35px;
   width: 40px;
   background-image: url(yellowbird-upflap.png);
   background-size: 100% 100%;
-  transform: translate(100px, 287px);
-  animation: jump 0.4s infinite ease-in-out;
+  left: 100px;
+  animation: idle 0.4s infinite ease-in-out alternate;
+  z-index: 0;
+  transition: 0.3s;
+  border: 1px solid white;
 }
 .score{
   font-size: 30px;
@@ -35,10 +40,20 @@ body{
 .pipe {
   background-image: url(pipe-green.png);
   width: 52px;
+  transition: 0.3s;
   position: absolute;
-  bottom: 0;
 }
 
+.startNotification{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'poppins', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  z-index: 1;
+}
 @keyframes gravity{
   0%{
     transform : rotate(0deg);
@@ -53,5 +68,13 @@ body{
   }
   100%{
     transform : rotate(-45deg);
+  }
+}
+@keyframes idle{
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(2px);
   }
 }
