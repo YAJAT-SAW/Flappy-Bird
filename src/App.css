@@ -14,7 +14,8 @@ body{
   border: 2px solid black;
   height: 600px;
   width: 350px;
-  background-image: url(background-day.png);  
+  background-image: url(background-day.png);
+  position: relative;
 }
 .bird{
   height: 35px;
@@ -22,9 +23,7 @@ body{
   background-image: url(yellowbird-upflap.png);
   background-size: 100% 100%;
   transform: translate(100px, 287px);
-  animation: gravity 3s infinite ease-out;
-  border: 2px solid black;
-  transform-origin: center;
+  animation: jump 0.4s infinite ease-in-out;
 }
 .score{
   font-size: 30px;
@@ -33,11 +32,27 @@ body{
   color: white;
   text-align: center;
 }
+.pipe {
+  background-image: url(pipe-green.png);
+  width: 52px;
+  position: absolute;
+  bottom: 0;
+  left: 100px;
+}
+
 @keyframes gravity{
   0%{
     transform : rotate(0deg);
   }
   100%{
     transform : rotate(90deg);
+  }
+}
+@keyframes jump{
+  0%{
+    transform : rotate(0deg);
+  }
+  100%{
+    transform : rotate(-45deg);
   }
 }
