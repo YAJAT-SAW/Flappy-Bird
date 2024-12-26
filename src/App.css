@@ -37,7 +37,6 @@ body{
   width: 52px;
   position: absolute;
   bottom: 0;
-  left: 100px;
 }
 
 @keyframes gravity{

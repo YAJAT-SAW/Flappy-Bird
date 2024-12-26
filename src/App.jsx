@@ -17,11 +17,23 @@ export default function App() {
     width: 350,
   };
   const PIPE_WIDTH = 52;
+  const SPEED = 5;
   const [pipeX, setPipeX] = useState(0-PIPE_WIDTH);
   const [bottomPipe, setBottomPipe] = useState(250)
   const [topPipe, setTopPipe] = useState(250);
-  const [score, setScore] = useState(0)
+  const [score, setScore] = useState(0);
+  const [isStart, setIsStart] = useState(true);
 
+  useEffect(()=>{
+    let pipeInterval;
+    if(isStart){
+      pipeInterval = setInterval(()=>{
+        setPipeX(pipeX+SPEED);
+        console.log(pipeX);
+      })
+    }
+    return clearInterval(pipeInterval);
+  },[])
   return(
     <div className="background">
       <div className="score">
